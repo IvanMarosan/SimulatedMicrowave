@@ -99,37 +99,42 @@ public class Controller {
 
     @FXML
     void defrostButtonPressed() {
-        SettingsSingleton.getInstance().setWattage(500);
-        SettingsSingleton.getInstance().setTime(120);
-        currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
-        remainingTimeLabel.setText(Integer.toString(SettingsSingleton.getInstance().getTime()));
-
+        if (!th.isAlive()) {
+            SettingsSingleton.getInstance().setWattage(500);
+            SettingsSingleton.getInstance().setTime(120);
+            currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
+            remainingTimeLabel.setText(Integer.toString(SettingsSingleton.getInstance().getTime()));
+        }
     }
     @FXML
     void fishButtonPressed() {
-        SettingsSingleton.getInstance().setWattage(800);
-        SettingsSingleton.getInstance().setTime(180);
-        currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
-        remainingTimeLabel.setText(Integer.toString(SettingsSingleton.getInstance().getTime()));
+        if (!th.isAlive()) {
+            SettingsSingleton.getInstance().setWattage(800);
+            SettingsSingleton.getInstance().setTime(180);
+            currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
+            remainingTimeLabel.setText(Integer.toString(SettingsSingleton.getInstance().getTime()));
 
-
+        }
     }
     @FXML
     void beefButtonPressed() {
-        SettingsSingleton.getInstance().setWattage(600);
-        SettingsSingleton.getInstance().setTime(360);
-        currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
-        remainingTimeLabel.setText(Integer.toString(SettingsSingleton.getInstance().getTime()));
-
+        if (th.isAlive()) {
+            SettingsSingleton.getInstance().setWattage(600);
+            SettingsSingleton.getInstance().setTime(360);
+            currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
+            remainingTimeLabel.setText(Integer.toString(SettingsSingleton.getInstance().getTime()));
+        }
 
     }
     @FXML
     void poultryButtonPressed() {
-        SettingsSingleton.getInstance().setWattage(750);
-        SettingsSingleton.getInstance().setTime(240);
-        currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
-        remainingTimeLabel.setText(Integer.toString(SettingsSingleton.getInstance().getTime()));
+        if (th.isAlive()) {
+            SettingsSingleton.getInstance().setWattage(750);
+            SettingsSingleton.getInstance().setTime(240);
+            currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
+            remainingTimeLabel.setText(Integer.toString(SettingsSingleton.getInstance().getTime()));
 
+        }
 
     }
 
