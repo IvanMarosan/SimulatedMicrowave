@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -16,7 +16,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="306.0" prefWidth="342.0">
+      <AnchorPane prefHeight="373.0" prefWidth="343.0">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="95.0" layoutY="30.0" prefHeight="17.0" prefWidth="137.0" text="Microwave">
                <font>
@@ -65,6 +65,15 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Label alignment="CENTER" layoutX="136.0" layoutY="259.0" text="Modes">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="40.0" layoutY="302.0" mnemonicParsing="false" onAction="#defrostButtonPressed" text="Defrost" />
+            <Button layoutX="118.0" layoutY="302.0" mnemonicParsing="false" onAction="#fishButtonPressed" text="Fish" />
+            <Button layoutX="178.0" layoutY="302.0" mnemonicParsing="false" onAction="#poultryButtonPressed" text="Poultry" />
+            <Button layoutX="253.0" layoutY="302.0" mnemonicParsing="false" onAction="#beefButtonPressed" text="Beef" />
          </children>
       </AnchorPane>
    </children>
