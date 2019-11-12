@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -16,64 +18,69 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="373.0" prefWidth="343.0">
+      <AnchorPane fx:id="anchorPane" prefHeight="880.0" prefWidth="1280.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="95.0" layoutY="30.0" prefHeight="17.0" prefWidth="137.0" text="Microwave">
+            <ImageView fitHeight="612.0" fitWidth="1255.0" layoutX="13.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/microbackground.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="392.0" layoutY="61.0" prefHeight="47.0" prefWidth="171.0" text="Microwave">
                <font>
-                  <Font size="18.0" />
+                  <Font size="32.0" />
                </font>
             </Label>
-            <Label fx:id="timeLabel" layoutX="43.0" layoutY="84.0" text="Time:">
+            <Label fx:id="timeLabel" layoutX="931.0" layoutY="115.0" text="Time:">
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="remainingTimeLabel" layoutX="95.0" layoutY="86.0" text="0">
+            <Label fx:id="remainingTimeLabel" layoutX="1105.0" layoutY="115.0" prefHeight="32.0" prefWidth="36.0" text="0">
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Button fx:id="increaseTimeButton" layoutX="180.0" layoutY="84.0" mnemonicParsing="false" onAction="#increaseTime" text="+" />
-            <Button fx:id="decreaseTimeButton" layoutX="232.0" layoutY="84.0" mnemonicParsing="false" onAction="#decreaseTime" text="-" />
-            <Label layoutX="31.0" layoutY="143.0" text="Wattage:">
+            <Button fx:id="increaseTimeButton" layoutX="1077.0" layoutY="239.0" mnemonicParsing="false" onAction="#increaseTime" prefHeight="30.0" prefWidth="67.0" text="+" />
+            <Button fx:id="decreaseTimeButton" layoutX="943.0" layoutY="239.0" mnemonicParsing="false" onAction="#decreaseTime" prefHeight="30.0" prefWidth="67.0" text="-" />
+            <Label layoutX="933.0" layoutY="152.0" text="Wattage:">
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="currentWattageLabel" layoutX="98.0" layoutY="145.0" text="000">
+            <Label fx:id="currentWattageLabel" layoutX="1105.0" layoutY="152.0" text="000">
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Button fx:id="increaseWattageButton" layoutX="180.0" layoutY="143.0" mnemonicParsing="false" onAction="#increaseWattage" text="+" />
-            <Button fx:id="decreaseWattageButton" layoutX="232.0" layoutY="143.0" mnemonicParsing="false" onAction="#decreaseWattage" text="-" />
-            <Label layoutX="31.0" layoutY="219.0" text="Door:">
+            <Button fx:id="increaseWattageButton" layoutX="1077.0" layoutY="275.0" mnemonicParsing="false" onAction="#increaseWattage" prefHeight="30.0" prefWidth="67.0" text="+" />
+            <Button fx:id="decreaseWattageButton" layoutX="943.0" layoutY="275.0" mnemonicParsing="false" onAction="#decreaseWattage" prefHeight="30.0" prefWidth="67.0" text="-" />
+            <Label layoutX="941.0" layoutY="415.0" text="Door:">
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="doorStatusLabel" layoutX="89.0" layoutY="219.0" text="Closed">
+            <Label fx:id="doorStatusLabel" alignment="CENTER_RIGHT" layoutX="1075.0" layoutY="415.0" text="Closed" textAlignment="RIGHT">
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Button fx:id="openCloseButton" layoutX="180.0" layoutY="217.0" mnemonicParsing="false" onAction="#openCloseDoor" text="Open/Close" />
-            <Button fx:id="offButton" layoutX="248.0" layoutY="24.0" mnemonicParsing="false" onAction="#turnOff" text="OFF" />
-            <Button fx:id="onButton" layoutX="34.0" layoutY="24.0" mnemonicParsing="false" onAction="#turnOn" text="ON" />
-            <Label fx:id="errorLabel" layoutX="154.0" layoutY="272.0" textAlignment="CENTER" textFill="RED">
+            <Button fx:id="openCloseButton" layoutX="936.0" layoutY="456.0" mnemonicParsing="false" onAction="#openCloseDoor" prefHeight="66.0" prefWidth="209.0" text="Open/Close" />
+            <Button fx:id="offButton" layoutX="1060.0" layoutY="551.0" mnemonicParsing="false" onAction="#turnOff" prefHeight="25.0" prefWidth="67.0" text="OFF" />
+            <Button fx:id="onButton" layoutX="965.0" layoutY="551.0" mnemonicParsing="false" onAction="#turnOn" prefHeight="25.0" prefWidth="67.0" text="ON" />
+            <Label fx:id="errorLabel" layoutX="936.0" layoutY="184.0" prefHeight="30.0" prefWidth="209.0" textAlignment="CENTER" textFill="RED">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="136.0" layoutY="259.0" text="Modes">
+            <Label alignment="CENTER" layoutX="1013.0" layoutY="305.0" text="Modes">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="40.0" layoutY="302.0" mnemonicParsing="false" onAction="#defrostButtonPressed" text="Defrost" />
-            <Button layoutX="118.0" layoutY="302.0" mnemonicParsing="false" onAction="#fishButtonPressed" text="Fish" />
-            <Button layoutX="178.0" layoutY="302.0" mnemonicParsing="false" onAction="#poultryButtonPressed" text="Poultry" />
-            <Button layoutX="253.0" layoutY="302.0" mnemonicParsing="false" onAction="#beefButtonPressed" text="Beef" />
+            <Button layoutX="943.0" layoutY="338.0" mnemonicParsing="false" onAction="#defrostButtonPressed" text="Defrost" />
+            <Button layoutX="943.0" layoutY="370.0" mnemonicParsing="false" onAction="#fishButtonPressed" prefHeight="25.0" prefWidth="55.0" text="Fish" />
+            <Button layoutX="1084.0" layoutY="338.0" mnemonicParsing="false" onAction="#poultryButtonPressed" prefHeight="25.0" prefWidth="55.0" text="Poultry" />
+            <Button layoutX="1084.0" layoutY="370.0" mnemonicParsing="false" onAction="#beefButtonPressed" prefHeight="25.0" prefWidth="55.0" text="Beef" />
          </children>
       </AnchorPane>
    </children>

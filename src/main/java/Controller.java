@@ -2,8 +2,13 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 
 public class Controller {
+
+    @FXML
+    private AnchorPane anchorPane;
 
     @FXML
     private Label remainingTimeLabel;
@@ -21,18 +26,16 @@ public class Controller {
 
     @FXML
     public void initialize() {
+        DraggableFood draggableFood = new DraggableFood(new Image(String.valueOf(getClass().getResource("images/chicken.png"))));
+        anchorPane.getChildren().addAll(draggableFood);
+        draggableFood.relocate(-50, 450);
         Task task = new Task<Void>() {
             @Override
             public Void call() throws Exception {
                 int i = SettingsSingleton.getInstance().getTime();
                 while (i >= 0) {
                     final int finalI = i;
-                    Platform.runLater(new Runnable() {
-
-                        public void run() {
-                            remainingTimeLabel.setText(Integer.toString(finalI));
-                        }
-                    });
+                    Platform.runLater(() -> remainingTimeLabel.setText(Integer.toString(finalI)));
                     i--;
                     SettingsSingleton.getInstance().setTime(i);
                     Thread.sleep(1000);
