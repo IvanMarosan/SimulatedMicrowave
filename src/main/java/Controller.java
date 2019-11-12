@@ -1,11 +1,15 @@
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 
-public class Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
 
     @FXML
     private AnchorPane anchorPane;
@@ -26,9 +30,6 @@ public class Controller {
 
     @FXML
     public void initialize() {
-        DraggableFood draggableFood = new DraggableFood(new Image(String.valueOf(getClass().getResource("images/chicken.png"))));
-        anchorPane.getChildren().addAll(draggableFood);
-        draggableFood.relocate(-50, 450);
         Task task = new Task<Void>() {
             @Override
             public Void call() throws Exception {
@@ -160,5 +161,10 @@ public class Controller {
     }
 
 
-
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        DraggableFood draggableFood = new DraggableFood(new Image(String.valueOf(getClass().getResource("images/chicken.png"))));
+        anchorPane.getChildren().addAll(draggableFood);
+        draggableFood.relocate(-50, 450);
+    }
 }
