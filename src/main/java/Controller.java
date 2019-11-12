@@ -118,7 +118,7 @@ public class Controller {
     }
     @FXML
     void beefButtonPressed() {
-        if (th.isAlive()) {
+        if (!th.isAlive()) {
             SettingsSingleton.getInstance().setWattage(600);
             SettingsSingleton.getInstance().setTime(360);
             currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
@@ -128,7 +128,7 @@ public class Controller {
     }
     @FXML
     void poultryButtonPressed() {
-        if (th.isAlive()) {
+        if (!th.isAlive()) {
             SettingsSingleton.getInstance().setWattage(750);
             SettingsSingleton.getInstance().setTime(240);
             currentWattageLabel.setText(Integer.toString(SettingsSingleton.getInstance().getWattage()));
