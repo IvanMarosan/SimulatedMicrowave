@@ -29,7 +29,7 @@ public class Controller implements Initializable {
     private Thread th;
 
     @FXML
-    public void initialize() {
+    public void threadStart() {
         Task task = new Task<Void>() {
             @Override
             public Void call() throws Exception {
@@ -60,7 +60,7 @@ public class Controller implements Initializable {
     @FXML
     void turnOff() {
         th.interrupt();
-        initialize();
+        threadStart();
     }
 
     @FXML
@@ -154,7 +154,7 @@ public class Controller implements Initializable {
             doorStatusLabel.setText("Open");
             if(th.isAlive()){
                 th.interrupt();
-                initialize();
+                threadStart();
             }
         }
 
@@ -163,6 +163,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        threadStart();
         DraggableFood draggableFood = new DraggableFood(new Image(String.valueOf(getClass().getResource("images/chicken.png"))));
         anchorPane.getChildren().addAll(draggableFood);
         draggableFood.relocate(-50, 450);
